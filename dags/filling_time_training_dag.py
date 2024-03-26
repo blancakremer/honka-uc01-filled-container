@@ -138,7 +138,7 @@ def uc01_filled_container_trainning():
         import redis
         import pickle
 
-        sys.path.insert(1, '/git/honka-tau-dag/src/filling_time_pred_src')
+        sys.path.insert(1, '/git/honka-uc01-filled-container/src/filling_time_pred_src')
         from Models.model_training import model_training
 
         redis_client = redis.StrictRedis(
@@ -168,7 +168,7 @@ def uc01_filled_container_trainning():
         import redis
         import pickle
 
-        sys.path.insert(1, '/git/honka-tau-dag/src/filling_time_pred_src')
+        sys.path.insert(1, '/git/honka-uc01-filled-container/src/filling_time_pred_src')
         from Models.model_training_extra_trees import model_training_et
 
         redis_client = redis.StrictRedis(
@@ -198,7 +198,7 @@ def uc01_filled_container_trainning():
         import redis
         import sys
 
-        sys.path.insert(1, '/git/honka-tau-dag/src/filling_time_pred_src')
+        sys.path.insert(1, '/git/honka-uc01-filled-container/src/filling_time_pred_src')
         from Deployment.select_best_model import select_best_model
 
         redis_client = redis.StrictRedis(
@@ -225,7 +225,7 @@ def uc01_filled_container_trainning():
     def register_experiment_task(best_model_res):
         import sys
 
-        sys.path.insert(1, '/git/honka-tau-dag/src/filling_time_pred_src')
+        sys.path.insert(1, '/git/honka-uc01-filled-container/src/filling_time_pred_src')
         from Deployment.register_experiment import register_experiment
 
         return register_experiment(best_model_res)

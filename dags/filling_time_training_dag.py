@@ -82,7 +82,7 @@ def uc01_filled_container_trainning():
         import pandas as pd
         import os
 
-        sys.path.insert(1, '/git/honka-tau-dag/src/filling_time_pred_src')
+        sys.path.insert(1, '/git/honka-uc01-filled-container/src/filling_time_pred_src')
         from Data.read_data import read_data
         from Process.data_processing import data_processing
 
@@ -98,7 +98,7 @@ def uc01_filled_container_trainning():
             cwd = os.getcwd()
             print("current_directory: ", cwd)
             try:
-                files = [f for f in os.listdir('/git/honka-tau-dag/src/filling_time_pred_src/Data/')]
+                files = [f for f in os.listdir('/git/honka-uc01-filled-container/src/filling_time_pred_src/Data/')]
                 print(">current file")
                 for f in files:
                     print(f)
@@ -111,7 +111,7 @@ def uc01_filled_container_trainning():
                     delimiter=';', quotechar='"')
             except:
                 df = pd.read_csv(
-                    "/git/honka-tau-dag/src/filling_time_pred_src/Data/logistic_dataset_filling_time_2021_2023.csv",
+                    "/git/honka-uc01-filled-container/src/filling_time_pred_src/Data/logistic_dataset_filling_time_2021_2023.csv",
                     delimiter=';', quotechar='"')
         dp = data_processing(df)
 

@@ -67,14 +67,14 @@ def model_training_et(data: Dict[str, Any]):
         time.sleep(10)
         mlflow.set_experiment(config.MLFLOW_EXPERIMENT)
     with mlflow.start_run(run_name="ExtraTreesModel"):
-        regr = ExtraTreesRegressor()
+        regr = ExtraTreesRegressor(max_depth=7,n_estimators=50)
         regr.fit(x_train, y_train)
 
         pred_values = regr.predict(x_test)
 
         (rmse, mae, r2) = utils.eval_metrics_2(y_test, pred_values)
 
-        print(f"ExtraTrees model (depth={7:f}, n_estimator={200:f}):")
+        print(f"ExtraTrees model (depth={7:f}, n_estimator={50:f}):")
         print(f"  RMSE: {rmse}")
         print(f"  MAE: {mae}")
         print(f"  R2: {r2}")
